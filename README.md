@@ -120,7 +120,7 @@ Este repositório foi criado para:
 
 ## 👨‍💻 Autor
 
-**F Heráclito Junior (HDevJr)**
-Desenvolvedor Python & entusiasta de APIs, automação e backend.
-📚 Foco em Django REST, arquitetura de software e boas práticas.
+**F Heráclito Junior (HDevJr)**  
+Desenvolvedor Python & entusiasta de APIs, automação e backend.  
+📗 Foco em Django REST, arquitetura de software e boas práticas.  
 📍 *“Melhorar 1% a cada dia até fazer a diferença no mundo.”*
