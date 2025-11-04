@@ -1,42 +1,126 @@
-# exercicios-python-algoritmos
+# 🐍 Exercícios Python & Algoritmos
 
-Coleção de 200 exercícios de Python organizados por tópicos para praticar **variáveis**, **condicionais**, **estruturas de repetição** e **funções**.
-Cada exercício está em um arquivo `exNN.py` com o enunciado como comentário e um espaço para você implementar a solução.
+Um repositório completo para **praticar lógica de programação, algoritmos e conceitos fundamentais de Python** — do básico ao intermediário — com foco em clareza, organização e aprendizado progressivo.
 
-## Estrutura
+---
+
+## 📘 Estrutura do Repositório
+
+Cada pasta representa um **tópico essencial da linguagem Python**, contendo:
+
+* 📄 **conceito.md** → explicação teórica detalhada
+* 📂 **enunciados/** → apenas os exercícios (sem resposta)
+* 📂 **resolucoes/** → soluções comentadas e organizadas
+
 ```
-exercicios-python-algoritmos/ Explicação sobre cada tópico e 50 exercícios para cada assunto
-├─ 01-variaveis/       
-├─ 02-condicionais/    
-├─ 03-loops/           
-└─ 04-funcoes/         
-└─ 05-poo: Classes e Programação Orientada a Objetos
-└─ 06-estruturas-dados: Estruturas de Dados e Coleções
-└─ 07-arquivos: Manipulação de Arquivos
-└─ 08-excecoes-validacoes: Tratamento de Exceções e Validações
-└─ 09-modulos-pacotes: Módulos, Pacotes e Importações
-└─ 10-compreensoes-lambda: Compreensões e Expressões Lambda
-└─ 11-testes: Testes Automatizados (Pytest/unittest)
-└─ 12-algoritmos-estruturas: Algoritmos e Estruturas Clássicas
-└─ 13-apis-requests: APIs e Consumo de Dados (requests)
+exercicios-python-algoritmos/
+│
+├── 01-variaveis/
+├── 02-condicionais/
+├── 03-loops/
+├── 04-funcoes/
+├── 05-poo/
+├── 06-estruturas-dados/
+├── 07-manipulacao-arquivos/
+├── 08-excecoes-validacoes/
+├── 09-modulos-pacotes/
+├── 10-compreensoes-lambda/
+├── 11-testes/
+├── 12-algoritmos-estruturas/
+└── 13-apis-requests/
 ```
-## Como usar
-1. Abra o arquivo do exercício que deseja resolver (ex.: `01-variaveis/ex01.py`).
-2. Leia o enunciado (comentário no topo) e implemente sua solução.
-3. Rode o arquivo individualmente: `python exNN.py`
-4. Marque seu progresso no checklist abaixo.
 
-## Checklist de progresso
-- [ ] Variáveis (1–50)
-- [ ] Condicionais (1–50)
-- [ ] Estruturas de repetição (1–50)
-- [ ] Funções (1–50)
+---
 
-## Requisitos
-- Python 3.11+ (recomendado)
-- Nenhuma biblioteca externa obrigatória
+## 🧠 Objetivo
 
+Treinar **raciocínio lógico e fundamentos sólidos** de programação, dominando:
 
+* Estruturas básicas (`if`, `for`, `while`, funções)
+* Programação orientada a objetos (POO)
+* Estruturas de dados clássicas
+* Manipulação de arquivos
+* Tratamento de exceções
+* Criação e uso de módulos
+* Expressões lambda e compreensões
+* Testes automatizados com `pytest` e `unittest`
+* Algoritmos clássicos (busca, ordenação, recursão)
+* Consumo de APIs com `requests`
 
-Vamos praticar juntos !!
+---
 
+## 🧩 Organização de cada tópico
+
+| Pasta                        | Conteúdo                                                             |
+| ---------------------------- | -------------------------------------------------------------------- |
+| **01-variaveis**             | Tipos primitivos, escopo, conversões e boas práticas                 |
+| **02-condicionais**          | `if`, `elif`, `else`, operadores lógicos e aninhamento               |
+| **03-loops**                 | `for`, `while`, `break`, `continue`, loops aninhados                 |
+| **04-funcoes**               | Declaração, parâmetros, retorno e modularização                      |
+| **05-poo**                   | Classes, objetos, herança, encapsulamento e métodos especiais        |
+| **06-estruturas-dados**      | Listas, tuplas, conjuntos, dicionários e uso de `collections`        |
+| **07-manipulacao-arquivos**  | Leitura, escrita, CSV, JSON e contexto `with open()`                 |
+| **08-excecoes-validacoes**   | `try/except`, exceções personalizadas e validação de entradas        |
+| **09-modulos-pacotes**       | Criação, importação e reutilização de código                         |
+| **10-compreensoes-lambda**   | List, Dict, Set comprehensions e funções anônimas                    |
+| **11-testes**                | Testes unitários, fixtures, mocks e integração com CI/CD             |
+| **12-algoritmos-estruturas** | Estruturas clássicas (pilhas, filas, árvores, grafos) e complexidade |
+| **13-apis-requests**         | Consumo de APIs REST com `requests`, parâmetros e autenticação       |
+
+---
+
+## 🧮 Tecnologias e Ferramentas
+
+* 🐍 **Python 3.12+**
+* 🤪 **pytest / unittest**
+* 🌐 **requests**
+* 📦 Estrutura modular e reutilizável
+* 🦯 Git e GitHub para versionamento
+
+---
+
+## 📞 Como usar
+
+1. **Clone o repositório**
+
+   ```bash
+   git clone https://github.com/HDevJr/exercicios-python-algoritmos.git
+   cd exercicios-python-algoritmos
+   ```
+
+2. **Escolha um tópico**
+   Exemplo:
+
+   ```bash
+   cd 05-poo/enunciados
+   ```
+
+3. **Resolva os exercícios**
+   Tente sem olhar a solução primeiro 😉
+   Depois confira a pasta `resolucoes/`.
+
+4. **Execute scripts**
+
+   ```bash
+   python nome_do_exercicio.py
+   ```
+
+---
+
+## 🛏 Propósito educacional
+
+Este repositório foi criado para:
+
+* Consolidar a base de **lógica e algoritmos**
+* Dominar os **fundamentos da linguagem Python**
+* Criar um **portfólio técnico** público e didático
+* Ajudar outros iniciantes a aprender de forma organizada
+
+---
+
+## 👨‍💻 Autor
+
+**F Heráclito Junior (HDevJr)**
+Desenvolvedor Python & entusiasta de APIs, automação e backend.
+📚 Foco em Django REST, arquitetura de software e boas práticas.
+📍 *“Melhorar 1% a cada dia até fazer a diferença no mundo.”*
