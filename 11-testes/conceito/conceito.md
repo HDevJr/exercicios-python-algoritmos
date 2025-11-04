@@ -1,377 +1,337 @@
-Conceito: Testes Automatizados em Python (Python e Unittest)
+# Conceito: Testes Automatizados em Python (Python e Unittest)
 
-1. O que são testes automatizados ?
+---
 
-    Os testes automatizados são scripts que verificam automaticamente se o código 
-    funciona como esperado.
-    Eles ajudam a detectar erros cedo, evitar regressões e garantir que novas alterações
-    não quebrem o sistema.
+## 1. O que são testes automatizados?
 
-    🔹 Raciocínio:
+Os testes automatizados são scripts que verificam automaticamente se o código funciona como esperado.  
+Eles ajudam a detectar erros cedo, evitar regressões e garantir que novas alterações não quebrem o sistema.
 
-        "Em vez de testar o código manualmente, você ensina o computador a testar por você."
-    
-2. Por que testar ?
+>  “Em vez de testar o código manualmente, você ensina o computador a testar por você.”
 
-    ✅ Evita bugs em produção
-    ✅ Facilita refatorações com segurança
-    ✅ Aumenta a confiança no código
-    ✅ Permite integração contínua (CI/CD)
-    ✅ Serve como documentação viva do sistema
+---
 
-3. Tipos de testes
+## 2. Por que testar?
 
-    | Tipo                | O que testa                                     | Exemplo                            |
-    | ------------------- | ----------------------------------------------- | ---------------------------------- |
-    | **Unitário**        | Uma função ou classe isolada                    | Testar uma função `soma()`         |
-    | **De integração**   | Interação entre módulos                         | API + banco de dados               |
-    | **Funcional / E2E** | O sistema completo em uso                       | Login, fluxo de compra             |
-    | **De regressão**    | Verifica se algo “antigo” quebrou após mudanças | Testes repetidos após refatorações |
+✅ Evita bugs em produção  
+✅ Facilita refatorações com segurança  
+✅ Aumenta a confiança no código  
+✅ Permite integração contínua (CI/CD)  
+✅ Serve como documentação viva do sistema
 
-4. Estrutura básica de um teste unitário
+---
 
-    Um teste verficia se uma entrada produz a saída esperada.
+## 3. Tipos de testes
 
-    Ex:
-        def somar(a, b):
-            return a + b
-        
-        def test_soma():
-            assert soma(2, 3) == 5
-    
-        # Saída (executando  com pyteste): pytest .
-                                           ✓ test_soma PASSED
+| Tipo                | O que testa                                     | Exemplo                            |
+| ------------------- | ----------------------------------------------- | ---------------------------------- |
+| **Unitário**        | Uma função ou classe isolada                    | Testar uma função `soma()`         |
+| **De integração**   | Interação entre módulos                         | API + banco de dados               |
+| **Funcional / E2E** | O sistema completo em uso                       | Login, fluxo de compra             |
+| **De regressão**    | Verifica se algo “antigo” quebrou após mudanças | Testes repetidos após refatorações |
 
-5. Testes com assert
+---
 
-    O comando assert verifica se uma condição é verdadeira.
-    Se for falsa, o teste falha.
+## 4. Estrutura básica de um teste unitário
 
-    Ex:
-        def dobro(x):
-            return x * 2
+Um teste verifica se uma entrada produz a saída esperada.
 
-        def test_dobro():
-            assert dobro(4) == 8
-            assert dobro(0) == 0
-            assert dobro(-2) == -4
+```python
+def somar(a, b):
+    return a + b
 
-6. Criando testes com o módulo unittest (nativo do Python)
+def test_soma():
+    assert somar(2, 3) == 5
 
-    🔹 Estrutura básica:
+# Saída (executando com pytest): pytest .
+# ✓ test_soma PASSED
+```
 
-        Ex:
-            import unittest
+---
 
-            def soma(a, b):
-                return a + b
-            
-            class TesteSoma(unittest.TestCase):
-                def test_soma_positiva(self):
-                    self.assertEqual(soma(2, 3), 5)
+## 5. Testes com `assert`
 
-                def test_soma_negativa(self):
-                    self.assertEqual(soma(-1, -1), -2)
-            
-            if __name__ == '__main__':
-                unittest.main()
-            
-            # Saída: ..
-                     ----------------------------------------------------------------------
-                     Ran 2 tests in 0.001s
+O comando `assert` verifica se uma condição é verdadeira.  
+Se for falsa, o teste falha.
 
-                     OK
+```python
+def dobro(x):
+    return x * 2
 
-        🔹 1. Importação do módulo:
+def test_dobro():
+    assert dobro(4) == 8
+    assert dobro(0) == 0
+    assert dobro(-2) == -4
+```
 
-            import unittest
+---
 
-            -> Aqui está sendo importando o framework de testes do Python,
-               chamado unittest.
+## 6. Criando testes com o módulo `unittest` (nativo do Python)
 
-               Ele serve para criar e executar testes automaticamente,
-               verificando se as funções do código estão funcionando corretamente.
+### 🔹 Estrutura básica
 
-        🔹 2. Função a ser testada:
+```python
+import unittest
 
-            def soma(a, b):
-                return a + b
-            
-            -> Essa é uma função simples que retorna a soma de dois números.
-               Será ela que o teste vai verificar.
-        
-        🔹 3. Criando a classe de teste:
+def soma(a, b):
+    return a + b
 
-            class TesteSoma(unittest.TestCase):
+class TesteSoma(unittest.TestCase):
+    def test_soma_positiva(self):
+        self.assertEqual(soma(2, 3), 5)
 
-            -> Aqui é criado uma classe de teste, que:
-            ° herda de unittest.TestCase (classe base do framework),
-            ° e define métodos de test (funções que testam partes do código).
-            ° Tudo o que estiver dentro dessa classe será avaliado automaticamente quando o teste rodar.
-        
-        🔹 4. Criando os métodos de teste:
+    def test_soma_negativa(self):
+        self.assertEqual(soma(-1, -1), -2)
 
-            ✅ Teste 1 – soma positiva
+if __name__ == '__main__':
+    unittest.main()
+```
 
-                def test_soma_positiva(self):
-                    self.assertEqual(soma(2, 3), 5)
-            
-            ° self.assertEqual(x, y) -> verifica se x é igual a y.
-            ° Se for, o teste passa ✅
-            ° Se não for, o teste falha ❌
+**Saída esperada:**
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
 
-            Aqui, ele verifica se:
-                
-                soma(2, 3) == 5 
-            
-            O resultado é verdadeiro -> teste aprovado.
+OK
+```
 
-            ✅ Teste 2 – soma negativa
+---
 
-                def test_soma_negativa(self):
-                    self.assertEqual(soma(-1, -1), -2)
-                
-            Verifica se:
+### 🔹 Explicação
 
-                soma(-1, -1) == -2
+#### 1. Importação do módulo
+```python
+import unittest
+```
+Importa o framework de testes nativo do Python.
 
-            Também é verdadeiro -> outro teste aprovado.
+#### 2. Função a ser testada
+```python
+def soma(a, b):
+    return a + b
+```
+Função simples para somar dois números.
 
-        🔹 5. Executando os testes:
+#### 3. Classe de teste
+```python
+class TesteSoma(unittest.TestCase):
+```
+Define uma classe de testes que herda de `unittest.TestCase`.
 
-            if __name__ == '__main__':
-                unittest.main()
+#### 4. Métodos de teste
+```python
+def test_soma_positiva(self):
+    self.assertEqual(soma(2, 3), 5)
+```
 
-            -> Isso faz com que, ao rodar o arquivo (por exemplo, python teste.py),
-            o Pytho procure automaticamente por classes de teste (que herdam de unittest.TestCase)
-            e executa todos os métodos que começam com test_.
+- `self.assertEqual(x, y)` → verifica se `x` é igual a `y`.  
+- Se for, o teste passa ✅  
+- Caso contrário, falha ❌  
 
-        🔹 6. Saída esperada:
+#### 5. Executando os testes
+```python
+if __name__ == '__main__':
+    unittest.main()
+```
 
-            -> Quando é executado o script no terminal, verá algo assim:
+O Python procura automaticamente classes herdando de `unittest.TestCase` e executa métodos que começam com `test_`.
 
-            ..
-            ----------------------------------------------------------------------
-            Ran 2 tests in 0.000s
+---
 
-            OK
+### 🔹 Saída esperada
 
-            ° Cada ponto (.) representa um teste que passou.
-            ° "Ran 2 tests" -> foram executados dois testes.
-            ° "OK" -> todos passaram com sucesso ✅
-            Se algum teste falhar, o Python mostra o erro com detalhes.
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
 
+OK
+```
 
+Cada ponto (.) representa um teste que passou ✅  
+“Ran 2 tests” → dois testes executados.  
+“OK” → todos passaram.
 
-            | Elemento                             | Função                                         |
-            | ------------------------------------ | ---------------------------------------------- |
-            | `unittest`                           | Módulo padrão para testes automáticos          |
-            | `class TesteSoma(unittest.TestCase)` | Define uma classe de testes                    |
-            | `test_...`                           | Métodos executados automaticamente como testes |
-            | `assertEqual(a, b)`                  | Verifica se o resultado é o esperado           |
-            | `unittest.main()`                    | Roda todos os testes do arquivo                |
-            | `OK`                                 | Todos os testes passaram                       |
+---
 
-7. Testando exceções com unittest
+### 🔹 Resumo
 
-    Ex:
-        def dividir(a, b):
-            if b == 0:
-                raise ValueError("Divisão por zero não permitida.")
-            return a / b
-        
-        class TesteDivisão(unittest.TestCase):
-            def test_divisao_por_zero(self):
-                with self.assertRaises(ValueError):
-                    dividir(10, 0)
+| Elemento                             | Função                                         |
+| ------------------------------------ | ---------------------------------------------- |
+| `unittest`                           | Módulo padrão para testes automáticos          |
+| `class TesteSoma(unittest.TestCase)` | Define uma classe de testes                    |
+| `test_...`                           | Métodos executados automaticamente como testes |
+| `assertEqual(a, b)`                  | Verifica se o resultado é o esperado           |
+| `unittest.main()`                    | Roda todos os testes do arquivo                |
+| `OK`                                 | Todos os testes passaram                       |
 
-    🔹 1. Função dividir()
+---
 
-        def dividir(a, b):
-            if b == 0:
-                raise ValueError("Divisão por zero não permitida.")
-            return a / b
-        
-        ° Essa função tenta dividir a por b .
-        ° Tratamento de erro
-        ° Antes de fazer a divisão, ela verifica se o divisor b é zero.
-        ° Se for, ela lança um erro (exceção) com o comando raise.
+## 7. Testando exceções com `unittest`
 
+```python
+def dividir(a, b):
+    if b == 0:
         raise ValueError("Divisão por zero não permitida.")
+    return a / b
 
-        🔹 Isso significa:
-            "Pare a execução e informe que houve um erro de tipo ValueError com essa mensagem".
-
-        🔹 Caso contrário:
-            Se b for diferente de zero, a função executa normalmente:
-
-            return a / b
-
-    🔹 2. A classe de teste:
-
-        class TesteDivisão(unittest.TestCase):
-
-        -> Essa classe herda de unittest.TestCase,
-        o que significa que ela é um conjunto de testes automatizados.
-
-    🔹 3. O método de teste:
-
-        def test_divisao_por_zero(self):
-            with self.assertRaises(ValueError):
-                dividir(10, 0)
-        
-        -> Aqui está a parte mais importante:
-
-        🔸 with self.assertRaises(ValueError):
-
-        Esse comando verifica se uma exceção específica e lançada dentro do bloco with.
-
-        Em outras palavras:
-            "Espere que a função dentro deste bloco gere um erro do tipo ValueError."
-        
-        🔸 Dentro do bloco:
-
+class TesteDivisao(unittest.TestCase):
+    def test_divisao_por_zero(self):
+        with self.assertRaises(ValueError):
             dividir(10, 0)
+```
 
-        -> Essa chamada deveria causar um erro,
-        porque b = 0 e a função usa:
+Essa função lança um erro (`ValueError`) se `b == 0`.  
+O teste usa `self.assertRaises` para garantir que esse erro realmente aconteça.
 
-            raise ValueError("Divisão por zero não permitida.")
+---
 
-        Então o teste só passa se o erro realmente for lançado.
-        Se a função não lançar o erro, o teste falha.
+## 8. Testes com **Pytest** (biblioteca moderna e popular)
+
+### 🔹 Instalação
+```
+pip install pytest
+```
+
+### 🔹 Exemplo
+```python
+def soma(a, b):
+    return a + b
+
+def test_soma():
+    assert soma(2, 3) == 5
+```
+
+### 🔹 Estrutura recomendada
+```
+meu_projeto/
+│
+├── app/
+│   └── funcoes.py
+└── tests/
+    └── test_funcoes.py
+```
+
+### 🔹 Executar
+```
+pytest
+```
+
+---
+
+## 9. Testando exceções com Pytest
+
+```python
+import pytest
+
+def dividir(a, b):
+    if b == 0:
+        raise ValueError("Divisão por zero.")
+    return a / b
+
+def test_dividir_por_zero():
+    with pytest.raises(ValueError):
+        dividir(10, 0)
+```
+
+---
+
+## 10. Usando **setup** e **teardown**
+
+Às vezes, é necessário preparar ou limpar algo antes/depois dos testes.
+
+### 🔹 Com unittest
+
+```python
+class TesteConta(unittest.TestCase):
+    def setUp(self):
+        self.saldo = 100  # executa antes de cada teste
     
-    🔹 4. O que acontece quando você executa:
-
-        Quando o unittest roda esse teste, ele:
-        ° Chama dividir(10, 0);
-        ° Vê que a função lançou um ValueError;
-        ° Confirma que era exatamente o tipo de erro esperado;
-        ° E marca o teste como aprovado.
-
-8. Testes com Pytest (biblioteca mais moderna e popular)
-
-    O pytest torna testes mais simples e legíveis.
-
-    🔹 Instalação:
-
-        pip install pytest
+    def tearDown(self):
+        self.saldo = 0  # executa depois de cada teste
     
-    🔹 Exemplo:
+    def test_saque(self):
+        self.saldo -= 50
+        self.assertEqual(self.saldo, 50)
+```
 
-        def soma(a, b):
-            return a + b
-        
-        def test_soma():
-            assert soma(2, 3) == 5
+### 🔹 Com pytest (fixture)
+```python
+import pytest
 
-    🔹 Estrutura recomendada:
+@pytest.fixture
+def saldo_inicial():
+    return 100
 
-        meu_projeto/
-        │
-        ├── app/
-        │   └── funcoes.py
-        └── tests/
-            └── test_funcoes.py
-    
-    🔹 Executar:
+def test_saque(saldo_inicial):
+    novo_saldo = saldo_inicial - 50
+    assert novo_saldo == 50
+```
 
-        pytest
-    
-9. Testando exceções com pytest
+---
 
-    import pytest
+## 11. Cobertura de testes (coverage)
 
-    def dividir(a, b):
-        if b ==0:
-            raise ValueError("Divisão por zero.")
-        return a / b
-    
-    def test_dividir_por_zero():
-        with pytest.raises(ValueError):
-            dividir(10, 0)
+Para medir quanto do código foi testado:
 
-10. Usando setup e teardown
+```bash
+pip install pytest-cov
+pytest --cov=app/
+```
 
-    Às vezes, precisamos preparar ou limpar algo antes/despois dos testes.
-    Podemos usar fixtures ou métodos especiais.
+**Saída:**
+```
+----------- coverage: platform win, python 3.12 -----------
+Name                 Stmts   Miss  Cover
+----------------------------------------
+app/funcoes.py          10      0   100%
+```
 
-    🔹 Com unittest:
+---
 
-        class TesteConta(unittest.TestCase):
-            def setup(self):
-                self.saldo = 100                    # executa antes de cada teste
-            
-            def tearDown(self):
-                self.saldo = 0                      # executa depois de cada teste
-            
-            def test_saque(self):
-                self.saldo -= 50
-                self.assertEqual(self.saldo, 50)
-            
-    🔹 Com pytest (fixture):
+## 12. Integração com CI/CD (GitHub Actions)
 
-        import pytest
+Exemplo de arquivo `.github/workflows/test.yml`:
 
-        @pytest.fixture
-        def saldo_inicial():
-            return 100
+```yaml
+name: Python Tests
 
-        def test_saque(saldo_inicial):
-            novo_saldo = saldo_inicial - 50
-            assert nova_saldo == 50
+on: [push, pull_request]
 
-11. Cobertura de testes (coverage)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pytest pytest-cov
+      - name: Run tests
+        run: pytest --cov=app/
+```
 
-    Para medir quanto do código foi testado, instale o pytest-cov:
+Assim, os testes rodam automaticamente a cada atualização do repositório.
 
-    Ex:
-        pip install pytest-cov
-        pytest --cov=app/
+---
 
-        # Saída:    ----------- coverage: platform win, python 3.12 -----------
-                    Name                 Stmts   Miss  Cover
-                    ----------------------------------------
-                    app/funcoes.py          10      0   100%
+## 13. Boas práticas
 
-12. Integração com CI/CD (GitHub Actions)
+✅ Nomeie arquivos de teste com o prefixo `test_`.  
+✅ Cada função deve testar apenas uma coisa.  
+✅ Escreva testes antes ou junto com o código (TDD).  
+✅ Use mensagens de erro claras nos asserts.  
+✅ Mantenha os testes rápidos e independentes.  
+✅ Garanta cobertura acima de 80%.
 
-    É possível automatizar a exceção de teste em cada commit no GitHub.
+---
 
-    Exemplo de arquivo .github/workflows/test.yml :
+## 14. Erros comuns
 
-    name: Python Tests
-
-    on: [push, pull_request]
-
-    jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v3
-        - name: Set up Python
-            uses: actions/setup-python@v4
-            with:
-            python-version: '3.12'
-        - name: Install dependencies
-            run: pip install pytest pytest-cov
-        - name: Run tests
-            run: pytest --cov=app/
-    
-    Assim, os teste rodam automaticamente em cada atualização do repositório.
-
-13. Boas práticas
-
-    ✅ Nomeie arquivos de teste com o prefixo test_.
-    ✅ Cada função deve testar apenas uma coisa.
-    ✅ Escreva testes antes ou junto com o código (TDD).
-    ✅ Use mensagens de erro claras nos asserts.
-    ✅ Mantenha os testes rápidos e independentes entre si.
-    ✅ Garanta cobertura acima de 80%.
-
-14. Erros comuns
-
-    ❌ Testes dependentes da ordem de execução.
-    ❌ Não isolar dados entre testes (usar variáveis globais).
-    ❌ Testes lentos e pouco específicos.
-    ❌ Esquecer de configurar o ambiente de teste.
+❌ Testes dependentes da ordem de execução.  
+❌ Não isolar dados entre testes (usar variáveis globais).  
+❌ Testes lentos e pouco específicos.  
+❌ Esquecer de configurar o ambiente de teste.
