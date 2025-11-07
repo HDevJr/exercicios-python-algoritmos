@@ -1,5 +1,3 @@
 # Enunciado 40:
-# Monte uma ficha técnica com f-string multilinha.
-
-# Sua implementação aqui 👇
-
+# Leia os dados de um produto (nome, categoria, preço e peso)
+# e exiba uma ficha técnica formatada, usando uma f-string multilinha.

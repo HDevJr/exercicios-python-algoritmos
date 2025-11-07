@@ -1,5 +1,2 @@
 # Enunciado 43:
-# Conte quantas palavras há em um texto (split).
-
-# Sua implementação aqui 👇
-
+# Leia um texto digitado pelo usuário e conte quantas palavras ele contém, utilizando o método .split().

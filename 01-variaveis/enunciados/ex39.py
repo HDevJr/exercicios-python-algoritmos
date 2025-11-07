@@ -1,5 +1,3 @@
 # Enunciado 39:
-# Número real: separe parte inteira e parte decimal em variáveis.
-
-# Sua implementação aqui 👇
-
+# Leia um número real e separe sua parte inteira e parte decimal em variáveis distintas.
+# Em seguida, exiba as duas partes na tela.

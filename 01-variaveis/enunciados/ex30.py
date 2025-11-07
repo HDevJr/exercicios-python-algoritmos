@@ -1,5 +1,2 @@
 # Enunciado 30:
-# Converta inteiro para binário, octal e hexadecimal (strings).
-
-# Sua implementação aqui 👇
-
+# Leia um número inteiro e converta para binário, octal e hexadecimal (strings).

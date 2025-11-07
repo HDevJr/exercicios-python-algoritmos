@@ -1,5 +1,3 @@
 # Enunciado 49:
-# Média harmônica de n1 e n2 (somente atribuições e prints).
-
-# Sua implementação aqui 👇
-
+# Crie duas variáveis n1 e n2, atribuindo valores numéricos a elas,
+# e calcule a média harmônica utilizando apenas atribuições e prints (sem entrada do usuário).

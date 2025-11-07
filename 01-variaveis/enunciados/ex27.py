@@ -1,5 +1,3 @@
 # Enunciado 27:
-# Juros simples: valor e taxa mensal (%) → valor após 6 meses.
-
-# Sua implementação aqui 👇
-
+# Leia o valor inicial de um investimento (capital) e a taxa de juros simples mensal (%).
+# Calcule e exiba o valor total após 6 meses.

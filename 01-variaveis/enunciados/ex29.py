@@ -1,5 +1,2 @@
 # Enunciado 29:
-# Dados de produto (nome, sku, preço, estoque) e exiba um resumo.
-
-# Sua implementação aqui 👇
-
+# Leia os dados de um produto: nome, SKU, preço e quantidade em estoque. Em seguida, exiba um resumo formatado do produto, mostrando também o valor total em estoque.

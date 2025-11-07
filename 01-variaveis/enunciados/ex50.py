@@ -1,5 +1,4 @@
 # Enunciado 50:
-# Monte data humanizada com dia, mês (por nome) e ano (ex.: “15 de outubro de 2025”).
-
-# Sua implementação aqui 👇
-
+# Leia o dia, mês (em número) e ano,
+# e exiba a data no formato humanizado, com o nome do mês por extenso
+# (exemplo: “15 de outubro de 2025”).

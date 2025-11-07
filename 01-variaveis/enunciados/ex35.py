@@ -1,5 +1,3 @@
 # Enunciado 35:
-# URL: extraia domínio entre 'https://' e próxima '/'.
-
-# Sua implementação aqui 👇
-
+# Crie variáveis para armazenar o nome de um funcionário, cargo e salário.
+# Em seguida, exiba uma mensagem formatada mostrando todas essas informações.

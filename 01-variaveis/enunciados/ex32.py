@@ -1,5 +1,2 @@
 # Enunciado 32:
-# Largura, altura, profundidade → volume de uma caixa.
-
-# Sua implementação aqui 👇
-
+# Leia a largura, altura, profundidade e calcule o volume de uma caixa.

@@ -1,5 +1,2 @@
 # Enunciado 44:
-# Arquivo 'nome.ext': separe nome e extensão.
-
-# Sua implementação aqui 👇
-
+# Leia o nome de um arquivo no formato nome.ext e separe o nome e a extensão em variáveis distintas.

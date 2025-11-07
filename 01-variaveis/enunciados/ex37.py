@@ -1,5 +1,2 @@
 # Enunciado 37:
-# Substitua todas as vogais de um texto por '*'.
-
-# Sua implementação aqui 👇
-
+# Leia um texto e substitua todas as vogais (maiúsculas e minúsculas) por *.
