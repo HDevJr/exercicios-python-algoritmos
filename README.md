@@ -10,7 +10,7 @@ Cada pasta representa um **tópico essencial da linguagem Python**, contendo:
 
 * 📄 **conceito.md** → explicação teórica detalhada
 * 📂 **enunciados/** → apenas os exercícios (sem resposta)
-* 📂 **resolucoes/** → soluções comentadas e organizadas
+* 📂 **resolucoes/** → soluções organizadas
 
 ```
 exercicios-python-algoritmos/
