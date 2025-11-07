@@ -1,5 +1,5 @@
 # Enunciado 36:
-# CPF string: exiba apenas dígitos (remova pontuações).
+# CPF string: leia um cpf no formato xxx.xxx.xxx-xx exiba apenas dígitos (remova pontuações).
 
 cpf = input('Digite o CPF (formato XXX.XXX.XXX-XX): ').strip()
 
