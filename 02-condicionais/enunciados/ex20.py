@@ -1,5 +1,3 @@
 # Enunciado 20:
-# Palíndromo ignorando espaços e caixa.
-
-# Sua implementação aqui 👇
-
+# Leia uma frase e verifique se ela é um palíndromo,
+# desconsiderando espaços em branco e diferenças entre maiúsculas e minúsculas.

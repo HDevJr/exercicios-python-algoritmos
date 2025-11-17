@@ -1,5 +1,4 @@
 # Enunciado 05:
-# Duas vendas (maçãs, bananas): qual vendeu mais ou empate.
-
-# Sua implementação aqui 👇
-
+# Leia o número de vendas de maçãs e bananas e informe:
+# - Qual fruta vendeu mais
+# - Ou se houve empate

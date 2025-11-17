@@ -1,5 +1,2 @@
 # Enunciado 01:
-# Par ou ímpar de um número lido.
-
-# Sua implementação aqui 👇
-
+# Ler um número inteiro e determinar se ele é par ou ímpar.

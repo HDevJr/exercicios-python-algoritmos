@@ -1,5 +1,4 @@
 # Enunciado 06:
-# Três atividades (dias): se algum negativo, erro; senão somar total.
-
-# Sua implementação aqui 👇
-
+# Leia o número de dias de três atividades. 
+# Se algum valor for negativo, exiba erro. 
+# Caso todos sejam válidos, some os dias e apresente o total.

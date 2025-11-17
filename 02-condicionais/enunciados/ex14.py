@@ -1,5 +1,2 @@
-# Enunciado 14:
-# Classificar triângulo (equilátero/isósceles/escaleno).
-
-# Sua implementação aqui 👇
-
+# Enunciado 15:
+# # Verificar se três lados formam triângulo (desigualdade).
